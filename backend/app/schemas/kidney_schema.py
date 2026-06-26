@@ -7,7 +7,7 @@ class KidneyRequest(BaseModel):
     Sg: float
     Al: float
     Su: float
-    Rbc: str
+    Rbc: float
     Bu: float
     Sc: float
     Sod: float
@@ -15,4 +15,4 @@ class KidneyRequest(BaseModel):
     Hemo: float
     Wbcc: float
     Rbcc: float
-    Htn: str
+    Htn: float
