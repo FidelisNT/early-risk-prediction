@@ -16,3 +16,4 @@ class HeartRequest(BaseModel):
     Slope: int
     Ca: int
     Thal: int
+    Num: int

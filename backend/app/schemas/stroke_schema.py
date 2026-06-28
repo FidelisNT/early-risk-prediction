@@ -3,6 +3,7 @@ from pydantic import BaseModel
 
 class StrokeRequest(BaseModel):
 
+    Id: int
     Gender: str
     Age: int
     Hypertension: int

@@ -7,13 +7,19 @@ from app.config import (
     STROKE_MODEL,
 )
 
-diabetes_model = joblib.load(DIABETES_MODEL)
-heart_model = joblib.load(HEART_MODEL)
-kidney_model = joblib.load(KIDNEY_MODEL)
-stroke_model = joblib.load(STROKE_MODEL)
+diabetes_model = joblib.load(DIABETES_MODEL)["Model"]
+heart_model = joblib.load(HEART_MODEL)["Model"]
+kidney_model = joblib.load(KIDNEY_MODEL)["Model"]
+stroke_model = joblib.load(STROKE_MODEL)["Model"]
+
+diabetes_preprocessor = joblib.load(DIABETES_MODEL)["Preprocessor"]
+heart_preprocessor = joblib.load(HEART_MODEL)["Preprocessor"]
+kidney_preprocessor = joblib.load(KIDNEY_MODEL)["Preprocessor"]
+stroke_preprocessor = joblib.load(STROKE_MODEL)["Preprocessor"]
 
 
 def diabetes_predict(data):
+    data = diabetes_preprocessor.transform(data)
     prediction = diabetes_model.predict(data)[0]
     probability = diabetes_model.predict_proba(data)[0].max()
 
@@ -21,6 +27,7 @@ def diabetes_predict(data):
 
 
 def heart_predict(data):
+    data = heart_preprocessor.transform(data)
     prediction = heart_model.predict(data)[0]
     probability = heart_model.predict_proba(data)[0].max()
 
@@ -28,6 +35,7 @@ def heart_predict(data):
 
 
 def kidney_predict(data):
+    data = kidney_preprocessor.transform(data)
     prediction = kidney_model.predict(data)[0]
     probability = kidney_model.predict_proba(data)[0].max()
 
@@ -35,6 +43,7 @@ def kidney_predict(data):
 
 
 def stroke_predict(data):
+    data = stroke_preprocessor.transform(data)
     prediction = stroke_model.predict(data)[0]
     probability = stroke_model.predict_proba(data)[0].max()
 
