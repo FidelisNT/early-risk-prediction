@@ -4,9 +4,9 @@ HEART CLASSIFICATION REPORT
 
               precision    recall  f1-score   support
 
-           0     1.0000    1.0000    1.0000       111
-           1     1.0000    1.0000    1.0000        94
+           0     0.8571    0.8649    0.8610       111
+           1     0.8387    0.8298    0.8342        94
 
-    accuracy                         1.0000       205
-   macro avg     1.0000    1.0000    1.0000       205
-weighted avg     1.0000    1.0000    1.0000       205
+    accuracy                         0.8488       205
+   macro avg     0.8479    0.8473    0.8476       205
+weighted avg     0.8487    0.8488    0.8487       205
