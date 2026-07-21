@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Navigate, useLocation } from "react-router-dom";
-import { useAuth } from "../hooks/useAuth";
-import LoadingScreen from "./LoadingScreen";
+import { useAuth } from "../hooks/useAuth.js";
+import LoadingScreen from "./LoadingScreen.jsx";
 
 export default function ProtectedRoute({ role, children }) {
   const { session, loadProfile } = useAuth();

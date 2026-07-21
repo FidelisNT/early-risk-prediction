@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Alert, Badge, Card, Col, Row } from "react-bootstrap";
 import { Building2, UserRound } from "lucide-react";
-import { adminApi } from "../../api/client";
-import LoadingScreen from "../../components/LoadingScreen";
+import { adminApi } from "../../api/client.js";
+import LoadingScreen from "../../components/LoadingScreen.jsx";
 
 export default function AdminDashboard() {
   const [patients, setPatients] = useState([]);

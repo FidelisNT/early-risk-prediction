@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Alert, Badge, Card, Table } from "react-bootstrap";
-import { adminApi } from "../../api/client";
-import LoadingScreen from "../../components/LoadingScreen";
+import { adminApi } from "../../api/client.js";
+import LoadingScreen from "../../components/LoadingScreen.jsx";
 
 export default function AdminInstitutions() {
   const [institutions, setInstitutions] = useState([]);

@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { Col, Container, Row } from "react-bootstrap";
 import { Building2, ShieldCheck, UserRound } from "lucide-react";
-import DiseaseIcon from "../components/DiseaseIcon";
-import { DISEASES, DISEASE_LABELS } from "../api/client";
-import AppNavbar from "../components/AppNavbar";
+import DiseaseIcon from "../components/DiseaseIcon.jsx";
+import { DISEASES, DISEASE_LABELS } from "../api/client.js";
+import AppNavbar from "../components/AppNavbar.js";
 
 const ROLES = [
   {

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Alert, Button, Card, Col, Form, Row } from "react-bootstrap";
-import { institutionApi } from "../../api/client";
-import LoadingScreen from "../../components/LoadingScreen";
+import { institutionApi } from "../../api/client.js";
+import LoadingScreen from "../../components/LoadingScreen.jsx";
 
 export default function InstitutionProfile() {
   const [form, setForm] = useState(null);

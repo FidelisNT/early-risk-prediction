@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Alert, Button, Card, Col, Container, Form, Row } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
-import { patientApi } from "../../api/client";
-import AppNavbar from "../../components/AppNavbar";
+import { patientApi } from "../../api/client.js";
+import AppNavbar from "../../components/AppNavbar.jsx";
 
 const BLOOD_GROUPS = ["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"];
 

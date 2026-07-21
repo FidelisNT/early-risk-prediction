@@ -1,6 +1,6 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import { LogOut, ShieldPlus } from "lucide-react";
-import { useAuth } from "../hooks/useAuth";
+import { useAuth } from "../hooks/useAuth.js";
 
 /**
  * Dark sidebar shell for the patient/institution sections. Only lists nav

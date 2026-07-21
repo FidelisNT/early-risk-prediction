@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import { LayoutDashboard, UserCog } from "lucide-react";
-import DashboardSidebar from "../../components/DashboardSidebar";
+import DashboardSidebar from "../../components/DashboardSidebar.jsx";
 
 const LINKS = [
   { to: "/patient/dashboard", label: "Dashboard", icon: LayoutDashboard },

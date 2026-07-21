@@ -1,26 +1,26 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import { AuthProvider } from "./context/AuthProvider";
-import ProtectedRoute from "./components/ProtectedRoute";
+import { AuthProvider } from "./context/AuthProvider.jsx";
+import ProtectedRoute from "./components/ProtectedRoute.jsx";
 
-import Landing from "./pages/Landing";
-import Signup from "./pages/Signup";
+import Landing from "./pages/Landing.jsx";
+import Signup from "./pages/Signup.jsx";
 
-import AdminLogin from "./pages/admin/AdminLogin";
-import AdminLayout from "./pages/admin/AdminLayout";
-import AdminDashboard from "./pages/admin/AdminDashboard";
-import AdminPatients from "./pages/admin/AdminPatients";
-import AdminInstitutions from "./pages/admin/AdminInstitutions";
+import AdminLogin from "./pages/admin/AdminLogin.jsx";
+import AdminLayout from "./pages/admin/AdminLayout.jsx";
+import AdminDashboard from "./pages/admin/AdminDashboard.jsx";
+import AdminPatients from "./pages/admin/AdminPatients.jsx";
+import AdminInstitutions from "./pages/admin/AdminInstitutions.jsx";
 
-import PatientLogin from "./pages/patient/PatientLogin";
-import PatientLayout from "./pages/patient/PatientLayout";
-import PatientDashboard from "./pages/patient/PatientDashboard";
-import PatientProfile from "./pages/patient/PatientProfile";
+import PatientLogin from "./pages/patient/PatientLogin.jsx";
+import PatientLayout from "./pages/patient/PatientLayout.jsx";
+import PatientDashboard from "./pages/patient/PatientDashboard.jsx";
+import PatientProfile from "./pages/patient/PatientProfile.jsx";
 
-import InstitutionLogin from "./pages/institution/InstitutionLogin";
-import InstitutionLayout from "./pages/institution/InstitutionLayout";
-import InstitutionDashboard from "./pages/institution/InstitutionDashboard";
-import InstitutionInsertData from "./pages/institution/InstitutionInsertData";
-import InstitutionProfile from "./pages/institution/InstitutionProfile";
+import InstitutionLogin from "./pages/institution/InstitutionLogin.jsx";
+import InstitutionLayout from "./pages/institution/InstitutionLayout.jsx";
+import InstitutionDashboard from "./pages/institution/InstitutionDashboard.jsx";
+import InstitutionInsertData from "./pages/institution/InstitutionInsertData.jsx";
+import InstitutionProfile from "./pages/institution/InstitutionProfile.jsx";
 
 export default function App() {
   return (

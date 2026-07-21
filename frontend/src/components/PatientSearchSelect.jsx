@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Form, Spinner } from "react-bootstrap";
 import { Search, User, X } from "lucide-react";
-import { institutionApi } from "../api/client";
+import { institutionApi } from "../api/client.js";
 
 export default function PatientSearchSelect({ selectedPatient, onSelect }) {
   const [query, setQuery] = useState("");

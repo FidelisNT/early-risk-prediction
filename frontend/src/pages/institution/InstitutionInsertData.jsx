@@ -2,16 +2,16 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Alert, Button, Card, Col, Form, Nav, Row } from "react-bootstrap";
 import { Heart } from "lucide-react";
-import { DISEASES, DISEASE_LABELS, institutionApi } from "../../api/client";
+import { DISEASES, DISEASE_LABELS, institutionApi } from "../../api/client.js";
 import {
   DISEASE_FORM_FIELDS,
   DISEASE_FORM_TITLES,
   DISEASE_FORM_DESCRIPTIONS,
   buildInitialValues,
-} from "../../config/diseaseFormFields";
-import PatientSearchSelect from "../../components/PatientSearchSelect";
-import DiseaseIcon from "../../components/DiseaseIcon";
-import StatusPill from "../../components/StatusPill";
+} from "../../config/diseaseFormFields.js";
+import PatientSearchSelect from "../../components/PatientSearchSelect.jsx";
+import DiseaseIcon from "../../components/DiseaseIcon.jsx";
+import StatusPill from "../../components/StatusPill.jsx";
 
 export default function InstitutionInsertData() {
   const [disease, setDisease] = useState(DISEASES[0]);

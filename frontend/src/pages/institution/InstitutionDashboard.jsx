@@ -13,11 +13,11 @@ import {
   XAxis,
 } from "recharts";
 import { AlertTriangle, PlusCircle, Stethoscope, Users } from "lucide-react";
-import { DISEASES, DISEASE_LABELS, institutionApi } from "../../api/client";
-import StatusPill from "../../components/StatusPill";
-import DiseaseIcon from "../../components/DiseaseIcon";
-import LoadingScreen from "../../components/LoadingScreen";
-import { getTimeGreeting } from "../../utils/greeting";
+import { DISEASES, DISEASE_LABELS, institutionApi } from "../../api/client.js";
+import StatusPill from "../../components/StatusPill.jsx";
+import DiseaseIcon from "../../components/DiseaseIcon.jsx";
+import LoadingScreen from "../../components/LoadingScreen.jsx";
+import { getTimeGreeting } from "../../utils/greeting.js";
 
 const RISK_COLORS = {
   low: "var(--vitalis-teal)",

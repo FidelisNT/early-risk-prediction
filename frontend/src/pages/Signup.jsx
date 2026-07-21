@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Alert, Button, Col, Form, Row } from "react-bootstrap";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
-import { patientApi, institutionApi } from "../api/client";
-import AuthSplitLayout from "../components/AuthSplitLayout";
+import { patientApi, institutionApi } from "../api/client.js";
+import AuthSplitLayout from "../components/AuthSplitLayout.jsx";
 
 const BLOOD_GROUPS = ["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"];
 

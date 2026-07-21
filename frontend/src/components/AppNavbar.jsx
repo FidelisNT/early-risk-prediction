@@ -1,7 +1,7 @@
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { LogOut, ShieldPlus } from "lucide-react";
-import { useAuth } from "../hooks/useAuth";
+import { useAuth } from "../hooks/useAuth.js";
 
 export default function AppNavbar({ roleLabel, links = [] }) {
   const navigate = useNavigate();

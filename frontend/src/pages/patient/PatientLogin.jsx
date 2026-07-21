@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Alert, Button, Form } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
-import { patientApi } from "../../api/client";
-import { useAuth } from "../../hooks/useAuth";
-import AuthSplitLayout from "../../components/AuthSplitLayout";
+import { patientApi } from "../../api/client.js";
+import { useAuth } from "../../hooks/useAuth.js";
+import AuthSplitLayout from "../../components/AuthSplitLayout.jsx";
 
 export default function PatientLogin() {
   const navigate = useNavigate();

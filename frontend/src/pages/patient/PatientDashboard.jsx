@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { Alert, Card, Col, Nav, Row, Table } from "react-bootstrap";
-import { DISEASES, DISEASE_LABELS, patientApi } from "../../api/client";
-import RiskGauge from "../../components/RiskGauge";
-import StatusPill from "../../components/StatusPill";
-import DiseaseIcon from "../../components/DiseaseIcon";
-import LoadingScreen from "../../components/LoadingScreen";
-import { getTimeGreeting } from "../../utils/greeting";
+import { DISEASES, DISEASE_LABELS, patientApi } from "../../api/client.js";
+import RiskGauge from "../../components/RiskGauge.jsx";
+import StatusPill from "../../components/StatusPill.jsx";
+import DiseaseIcon from "../../components/DiseaseIcon.jsx";
+import LoadingScreen from "../../components/LoadingScreen.js";
+import { getTimeGreeting } from "../../utils/greeting.js";
 
 export default function PatientDashboard() {
   const [profile, setProfile] = useState(null);

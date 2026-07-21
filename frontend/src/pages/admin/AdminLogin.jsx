@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Alert, Button, Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import { adminApi } from "../../api/client";
-import { useAuth } from "../../hooks/useAuth";
-import AuthSplitLayout from "../../components/AuthSplitLayout";
+import { adminApi } from "../../api/client.js";
+import { useAuth } from "../../hooks/useAuth.js";
+import AuthSplitLayout from "../../components/AuthSplitLayout.jsx";
 
 export default function AdminLogin() {
   const navigate = useNavigate();
