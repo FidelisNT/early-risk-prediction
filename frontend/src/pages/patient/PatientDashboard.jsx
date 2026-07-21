@@ -4,7 +4,7 @@ import { DISEASES, DISEASE_LABELS, patientApi } from "../../api/client.js";
 import RiskGauge from "../../components/RiskGauge.jsx";
 import StatusPill from "../../components/StatusPill.jsx";
 import DiseaseIcon from "../../components/DiseaseIcon.jsx";
-import LoadingScreen from "../../components/LoadingScreen.js";
+import LoadingScreen from "../../components/LoadingScreen.jsx";
 import { getTimeGreeting } from "../../utils/greeting.js";
 
 export default function PatientDashboard() {
