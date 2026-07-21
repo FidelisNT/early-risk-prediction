@@ -31,7 +31,8 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:4000",
-        "https://early-risk-prediction.vercel.app/",
+        "https://early-risk-prediction.vercel.app",
+        "https://early-risk-prediction-eqdo2409d-fidelis-projects-6bba235f.vercel.app/",
         ],
     allow_credentials=True,
     allow_methods=["*"],
