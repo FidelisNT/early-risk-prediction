@@ -3,7 +3,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import { Building2, ShieldCheck, UserRound } from "lucide-react";
 import DiseaseIcon from "../components/DiseaseIcon.jsx";
 import { DISEASES, DISEASE_LABELS } from "../api/client.js";
-import AppNavbar from "../components/AppNavbar.js";
+import AppNavbar from "../components/AppNavbar.jsx";
 
 const ROLES = [
   {

@@ -1,6 +1,6 @@
 import { useCallback, useState } from "react";
 import { adminApi, patientApi, institutionApi } from "../api/client.js";
-import { AuthContext } from "./authContext.jsx";
+import { AuthContext } from "./AuthContext.jsx";
 
 const PROFILE_FETCHERS = {
   patient: () => patientApi.getProfile(),
