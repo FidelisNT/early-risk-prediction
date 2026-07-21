@@ -1,49 +1,48 @@
+from contextlib import asynccontextmanager
+
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
-from app.routes.diabetes import router as diabetes_router
-from app.routes.heart import router as heart_router
-from app.routes.kidney import router as kidney_router
-from app.routes.stroke import router as stroke_router
+# from schemas import SignupRequest, LoginRequest
+# from auth import hash_password, verify_password
+from .database import create_db_and_tables
 
-app = FastAPI(
-    title="Machine Learning Early Risk Prediction API",
-    version="1.0.0"
+from .routers import admin, institution, patient
+from .ml.loader import load_models
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    print("Creating database...")
+    create_db_and_tables()
+
+    print("Loading ML models...")
+    load_models()
+
+    print("Application startup complete.")
+
+    yield
+
+    print("Application shutting down...")
+
+
+app = FastAPI(title="Prediction System API", lifespan=lifespan)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:4000"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
-app.include_router(
-    diabetes_router,
-    prefix="/predict/diabetes",
-    tags=["Diabetes"]
-)
+app.include_router(admin.router)
+app.include_router(patient.router)
+app.include_router(institution.router)
 
-app.include_router(
-    heart_router,
-    prefix="/predict/heart",
-    tags=["Heart Disease"]
-)
-
-app.include_router(
-    kidney_router,
-    prefix="/predict/kidney",
-    tags=["Kidney Disease"]
-)
-
-app.include_router(
-    stroke_router,
-    prefix="/predict/stroke",
-    tags=["Stroke"]
-)
-
+@app.on_event("startup")
+def startup():
+    load_models()
 
 @app.get("/")
-def home():
-    return {
-        "message": "Machine Learning Disease Prediction API"
-    }
-
-
-@app.get("/health")
-def health():
-    return {
-        "status": "Running"
-    }
+def health_check():
+    return {"status": "ok"}

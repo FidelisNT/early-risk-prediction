@@ -1,8 +1,8 @@
 from pathlib import Path
 
-BASE_DIR = Path(__file__).resolve().parent
+BASE_DIR = Path(__file__).resolve().parent.parent
 
-MODEL_PATH = BASE_DIR / "models"
+MODEL_PATH = BASE_DIR / "ml_model"
 
 DIABETES_MODEL = MODEL_PATH / "diabetes_model.pkl"
 HEART_MODEL = MODEL_PATH / "heart_model.pkl"
