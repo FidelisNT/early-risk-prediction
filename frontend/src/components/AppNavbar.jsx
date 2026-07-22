@@ -3,7 +3,7 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { LogOut, ShieldPlus } from "lucide-react";
 import { useAuth } from "../hooks/useAuth.js";
 
-export default function AppNavbar({ roleLabel, links = [] }) {
+export default function AppNavbar({ roleLabel, links = [], showLogout = false }) {
   const navigate = useNavigate();
   const { logout } = useAuth();
 
@@ -40,9 +40,11 @@ export default function AppNavbar({ roleLabel, links = [] }) {
                 {link.label}
               </Nav.Link>
             ))}
-            <Nav.Link onClick={handleLogout} className="fw-medium d-flex align-items-center gap-1">
-              <LogOut size={16} /> Log out
-            </Nav.Link>
+            {showLogout && (
+              <Nav.Link onClick={handleLogout} className="fw-medium d-flex align-items-center gap-1">
+                <LogOut size={16} /> Log out
+              </Nav.Link>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Container>

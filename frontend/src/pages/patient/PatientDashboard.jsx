@@ -81,13 +81,13 @@ export default function PatientDashboard() {
           ) : (
             <Row className="g-4">
               {latest.map((p) => (
-                <Col key={p.disease} xs={6} md={3} className="text-center">
+                <Col key={p.disease} xs={6} md={3}>
                   <RiskGauge
                     label={DISEASE_LABELS[p.disease] || p.disease}
                     percentage={p.percentage}
                     isPositive={p.prediction}
                   />
-                  <div className="mt-2">
+                  <div className="text-center mt-2">
                     <StatusPill isPositive={p.prediction} />
                   </div>
                 </Col>

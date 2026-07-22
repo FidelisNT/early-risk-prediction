@@ -4,6 +4,7 @@
   --vitalis-sky: #eaf2fd;
   --vitalis-teal: #1b998b;
   --vitalis-coral: #e4572e;
+  --vitalis-amber: #e8a33d;
 }
 
 .font-mono {
@@ -54,10 +55,21 @@ body {
    disease-risk prediction is shown. Positive results claim the coral
    accent deliberately, so it never appears anywhere else in the UI. */
 
+.risk-gauge-card {
+  border: 1px solid rgba(18, 60, 105, 0.08);
+  border-radius: var(--bs-border-radius-lg);
+  background: #fff;
+  padding: 1rem 0.75rem 0.85rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .risk-gauge {
   position: relative;
   width: 100%;
-  max-width: 160px;
+  max-width: 170px;
   margin: 0 auto;
 }
 
@@ -65,7 +77,7 @@ body {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 0.1rem;
+  bottom: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -73,17 +85,17 @@ body {
 
 .risk-gauge .risk-gauge-pct {
   font-family: "IBM Plex Mono", monospace;
-  font-size: 1.5rem;
-  font-weight: 500;
+  font-size: 1.6rem;
+  font-weight: 600;
   line-height: 1;
 }
 
-.risk-gauge .risk-gauge-label {
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: rgba(15, 31, 51, 0.55);
-  margin-top: 0.15rem;
+.risk-gauge-card .risk-gauge-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-align: center;
+  color: rgba(15, 31, 51, 0.65);
+  margin-top: 0.6rem;
 }
 
 .status-pill {
@@ -317,6 +329,78 @@ body {
   min-width: 0;
   background: var(--bs-body-bg);
   padding: 2rem 2.25rem;
+}
+
+/* Mobile top bar (hamburger + brand) - hidden on desktop, shown below the
+   768px breakpoint where the sidebar itself becomes an off-canvas drawer. */
+.app-mobile-topbar {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, var(--vitalis-navy) 0%, #0c2b4d 100%);
+  padding: 0.85rem 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1040;
+}
+
+.app-mobile-topbar-toggle {
+  background: transparent;
+  border: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem;
+}
+
+.app-sidebar-backdrop {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .app-shell {
+    flex-direction: column;
+  }
+
+  .app-mobile-topbar {
+    display: flex;
+  }
+
+  .app-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+    z-index: 1050;
+    box-shadow: 0.5rem 0 1.5rem rgba(0, 0, 0, 0.25);
+  }
+
+  .app-sidebar.is-open {
+    transform: translateX(0);
+  }
+
+  .app-sidebar-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(9, 20, 34, 0.5);
+    z-index: 1045;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+  }
+
+  .app-sidebar-backdrop.is-open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .app-main {
+    padding: 1.5rem 1rem;
+  }
 }
 
 .dashboard-stat-card {

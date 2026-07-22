@@ -7,6 +7,7 @@ export default function AdminLayout() {
     <>
       <AppNavbar
         roleLabel="Admin"
+        showLogout
         links={[
           { to: "/admin/dashboard", label: "Dashboard" },
           { to: "/admin/patients", label: "Patients" },
